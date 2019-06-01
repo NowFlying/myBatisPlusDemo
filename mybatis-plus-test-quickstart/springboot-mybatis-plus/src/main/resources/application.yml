@@ -1,0 +1,13 @@
+
+server:
+  port: 8989
+
+
+spring:
+  datasource:
+      # mysql 数据库，只需要切换就可以了，不需要该任何代码
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: pass
+
