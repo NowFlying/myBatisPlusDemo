@@ -42,9 +42,29 @@ public class UserController {
         return userService.deleteBatchIds(ids);
     }
 
-    @DeleteMapping("/delete")
-    public int delete(@RequestBody Map<String,Object> map){
-         return userService.delete(map);
+    @DeleteMapping("/deleteByMap")
+    public int deleteByMap(@RequestBody Map<String,Object> map){
+         return userService.deleteByMap(map);
     }
 
+
+    @PutMapping("/updateById")
+    public int updateById(@RequestBody User user){
+        return userService.updateById(user);
+    }
+
+    @PutMapping("/update")
+    public int update(){
+        return userService.update();
+    }
+
+    @GetMapping("/selectById/{id}")
+    public User selectById(@PathVariable("id") Integer id){
+        return userService.selectById(id);
+    }
+
+    @GetMapping("/selectBatchIds")
+    public User selectBatchIds(){
+//        return userService.selectBatchIds();
+    }
 }
