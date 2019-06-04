@@ -2,6 +2,7 @@ package com.ggf.mybatisplustestcrud.service;
 
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.additional.update.impl.UpdateChainWrapper;
 import com.ggf.mybatisplustestcrud.entity.User;
@@ -69,15 +70,16 @@ public class UserService {
     }
 
     /**
-     *  通过条件删除
+     *  通过条件删除(lambda表达式)
      * @Date 2019-06-03 17:26
      * @param
      * @return
      **/
-    public Integer deletes(){
-//        EntityWrapper<User> ew = new EntityWrapper<User>();
-//        userMapper.delete();
-        return null;
+    public Integer delete(){
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda().eq(User :: getName, "Sandy");
+        int res = userMapper.delete(queryWrapper);
+        return res;
     }
 
     /**
@@ -127,4 +129,15 @@ public class UserService {
         List<User> users = userMapper.selectBatchIds(idList);
         return users;
     }
+
+    /**
+     *  分页查询
+     * @Date 2019-06-04 21:02
+     * @param
+     * @return
+     **/
+//    public List<User> selectPage(){
+//        userMapper.selectPage();
+//        return users;
+//    }
 }

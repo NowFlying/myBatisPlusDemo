@@ -47,6 +47,11 @@ public class UserController {
          return userService.deleteByMap(map);
     }
 
+    @DeleteMapping("/delete")
+    public int delete(){
+        return userService.delete();
+    }
+
 
     @PutMapping("/updateById")
     public int updateById(@RequestBody User user){
@@ -63,8 +68,8 @@ public class UserController {
         return userService.selectById(id);
     }
 
-    @GetMapping("/selectBatchIds")
-    public User selectBatchIds(){
-//        return userService.selectBatchIds();
+    @PostMapping("/selectBatchIds")
+    public List<User> selectBatchIds(@RequestBody List<Integer> idList){
+        return userService.selectBatchIds(idList);
     }
 }
