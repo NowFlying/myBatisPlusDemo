@@ -58,6 +58,11 @@ public class UserController {
         return userService.updateById(user);
     }
 
+    @GetMapping("/lambdaUpdate")
+    public int lambdaUpdate(){
+        return userService.lambdaUpdate();
+    }
+
     @PutMapping("/update")
     public int update(){
         return userService.update();

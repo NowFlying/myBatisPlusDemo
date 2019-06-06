@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/myBatisPlusDemo.iml" filepath="$PROJECT_DIR$/.idea/myBatisPlusDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-plus-test-crud/mybatis-plus-test-crud.iml" filepath="$PROJECT_DIR$/mybatis-plus-test-crud/mybatis-plus-test-crud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-plus-test-pagination/mybatis-plus-test-pagination.iml" filepath="$PROJECT_DIR$/mybatis-plus-test-pagination/mybatis-plus-test-pagination.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatisplustestwrapper/mybatisplustestwrapper.iml" filepath="$PROJECT_DIR$/mybatisplustestwrapper/mybatisplustestwrapper.iml" />
+    </modules>
+  </component>
+</project>

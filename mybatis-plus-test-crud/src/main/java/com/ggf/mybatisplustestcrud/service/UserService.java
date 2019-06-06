@@ -4,6 +4,7 @@ package com.ggf.mybatisplustestcrud.service;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.additional.update.impl.UpdateChainWrapper;
 import com.ggf.mybatisplustestcrud.entity.User;
 import com.ggf.mybatisplustestcrud.mapper.UserMapper;
@@ -105,6 +106,23 @@ public class UserService {
         User user = new User();
         user.setName("lisi");
         int res = userMapper.update(user,updateWrapper);
+        return res;
+    }
+
+    /**
+     *  通过构造器构造条件Lamda
+     * @Date 2019-06-04 14:50
+     * @param
+     * @return
+     **/
+    public Integer lambdaUpdate(){
+        User user = new User();
+        user.setName("zhangsan");
+        int res = userMapper.update(user,
+                Wrappers.<User>lambdaUpdate()
+                        .set(User :: getAge, 2)
+                        .eq(User ::  getName, "lisi")
+        );
         return res;
     }
 
